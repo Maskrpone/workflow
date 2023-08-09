@@ -17,7 +17,11 @@ echo "installing various packages..."
 while read -r p ; do sudo pacman -S --noconfirm $p ; done < <(cat << "EOF"
 		obsidian
 		tmux
+    ripgrep
 		zsh
+    nodejs
+    npm
+    rust
 		neovim
 		btop
 		alacritty

@@ -9,3 +9,4 @@ echo "packer installed...";
 ln -sf $1/.dotfiles/nvim $1/.config/nvim
 
 echo "neovim configuration done !";
+
