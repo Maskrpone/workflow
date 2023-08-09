@@ -21,18 +21,17 @@ while read -r p ; do sudo pacman -S --noconfirm $p ; done < <(cat << "EOF"
 		neovim
 		btop
 		alacritty
+    ttf-meslo-nerd
 EOF
 )
 
+git clone https://aur.archlinux.org/yay-git.git && cd ~/.dotfiles/yay-git/ && makepkg -si
 
-echo "<==== Tmux setup ====>";
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;
-
-ln -sf $path/.dotfiles/.tmux.conf $path/.tmux.conf;
-
-echo "tpm installed...";
-
-echo "<=== Neovim configuration ===>";
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k;
 
 
+exec ./tmux.sh $path
+
+exec ./nvim.sh $path
