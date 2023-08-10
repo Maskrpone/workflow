@@ -105,6 +105,9 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+	-- cmake
+	use("Civitasv/cmake-tools.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
