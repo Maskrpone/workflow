@@ -1,0 +1,12 @@
+.slider {
+  button {
+    background-color: $bg;
+    padding-right: 22px;
+    padding-left: 20px;
+    border-radius: 10px;
+    color: $teal;
+  }
+  button:hover {
+    background-color: $bg-alt;
+  }
+}

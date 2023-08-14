@@ -1,0 +1,52 @@
+;; Listeners & poll variables
+(deflisten workspace "$HOME/.config/eww/scripts/workspaces.sh")
+(defpoll hour :interval "1s" `date +%H`)
+(defpoll minute :interval "1s" `date +%M`)
+
+
+;; Widgets
+(include "./yuck/widgets/workspaces.yuck")
+(include "./yuck/widgets/arch.yuck")
+(include "./yuck/widgets/separator.yuck")
+(include "./yuck/widgets/powermenu_bar.yuck")
+(include "./yuck/widgets/battery.yuck")
+(include "./yuck/widgets/clock.yuck")
+(include "./yuck/widgets/slider.yuck")
+
+;; Windows
+(include "./yuck/windows/powermenu.yuck")
+(include "./yuck/windows/bar.yuck")
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defwidget volume-popup []
+  (box
+    :class "volume_pop"
+    :hexpand true
+    (overlay
+      (box
+        :class "scale"
+        (scale
+          :min 0 
+          :max 101
+          :value {EWW_BATTERY["total_avg"] == "muted" ? 0 : EWW_BATTERY["total_avg"]}
+        )
+      )
+      (label
+        :halign "start"
+        :text {EWW_BATTERY['total_avg'] == 0 || EWW_BATTERY["total_avg"] == "muted" ? "" : 
+        EWW_BATTERY["total_avg"] < 30 ? "" : 
+        EWW_BATTERY["total_avg"] < 75 ? "" : ""} 
+        :style {EWW_BATTERY["total_avg"] == "muted" || EWW_BATTERY["total_avg"] == 0 ? "color: #dd6777;" : 
+        EWW_BATTERY["total_avg"] < 15 ? "color: #cacaca;" : "color: #191919;"}
+      )
+    )
+  )
+)
+
+(defwindow volume
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry :width "10%" :anchor "right center")
+  (volume-popup)
+)

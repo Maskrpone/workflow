@@ -1,0 +1,5 @@
+(defwidget powermenu_bar []
+  (eventbox  :class "powermenu_bar"
+        :cursor "pointer"
+  (button :onclick "$HOME/.config/eww/scripts/toggle.sh powermenu" "⏻"))
+)

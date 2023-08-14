@@ -1,0 +1,33 @@
+.battery_progressbar {
+  border-radius: 5px;
+  background-color: $grey;
+}
+
+.battery_progression {
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to right,
+    darken($color: $green, $amount: 15%),
+    $green
+  );
+}
+
+.battery {
+  background-color: $bg-alt;
+  border-radius: 10px;
+
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  // margin-right: 5px;
+  // margin-left: 5px;
+
+  color: $green;
+  font-size: 20px;
+  font-weight: bold;
+
+  label {
+    margin-right: 5px;
+  }
+}

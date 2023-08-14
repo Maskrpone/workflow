@@ -1,0 +1,30 @@
+(defwidget battery_progression []
+  (box  :class "battery_progression"
+        :orientation "h"
+        :valign "center"
+        :height 25
+        :width {round(EWW_BATTERY["total_avg"] * 150 / 100, 0 )}
+  )
+)
+
+(defwidget battery_progressbar []
+  (box  :class "battery_progressbar"
+        :orientation "h"
+        :space-evenly false
+        :width 150
+        (battery_progression)
+  )
+)
+
+
+(defwidget battery []
+  (box  :class "battery"
+
+        :orientation "h"
+        :valign "center"
+        :halign "center"
+        :space-evenly false
+        (label :text {EWW_BATTERY["BAT0"]["capacity"]})
+        (battery_progressbar)
+  )
+)

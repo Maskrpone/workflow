@@ -1,0 +1,21 @@
+.clock {
+  font-size: 24px;
+  background-color: $bg-alt;
+
+  border-radius: 10px;
+
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .hour {
+    font-weight: bold;
+    color: $fg;
+  }
+
+  .minute {
+    color: $grey;
+  }
+}

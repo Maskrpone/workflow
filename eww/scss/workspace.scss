@@ -1,0 +1,26 @@
+.workspace {
+  background-color: $bg-alt;
+
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+
+  button {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.ws-empty {
+  color: $grey;
+}
+
+.ws-occupied {
+  color: $peach;
+}
+
+.ws-focused {
+  color: $peach;
+}

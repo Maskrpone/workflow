@@ -1,0 +1,18 @@
+.powermenu_bar {
+  padding: 0;
+
+  button {
+    background-color: $bg-alt;
+    border-radius: 10px;
+    // margin-left: 5px;
+    margin-right: 2rem;
+    padding: 0;
+    padding-right: 22px;
+    padding-left: 20px;
+    font-size: 20px;
+    color: $red;
+  }
+  button:hover {
+    background-color: $grey;
+  }
+}

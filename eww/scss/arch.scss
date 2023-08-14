@@ -1,0 +1,14 @@
+.arch {
+  padding: 0;
+  font-size: 32px;
+  color: $blue;
+
+  button {
+    padding: 0;
+    padding-left: 2rem;
+    padding-right: 1rem;
+  }
+  button:hover {
+    color: $teal;
+  }
+}

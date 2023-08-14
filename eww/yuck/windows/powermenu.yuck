@@ -1,0 +1,38 @@
+(defwidget powermenu []
+  (box 
+    :class "powermenu"
+    :orientation "v"
+    :spacing 20
+    (eventbox
+      :cursor "pointer"
+      (button 
+        :class "powermenu shutdown" 
+        :onclick "systemctl poweroff -i" 
+        ""
+      )
+    )     
+    (eventbox
+      :cursor "pointer"
+      (button 
+        :class "powermenu reboot" 
+        :onclick "systemctl reboot -i" 
+        ""
+      )
+    )
+    (eventbox
+      :cursor "pointer"
+      (button 
+        :class "powermenu suspend" 
+        :onclick "$HOME/.config/eww/scripts/locker.sh" 
+        ""
+      )
+    )
+  )
+)
+
+(defwindow powermenu
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry :anchor "right center")
+  (powermenu)
+)

@@ -1,0 +1,7 @@
+(defwidget slider []
+  (eventbox :class "slider"
+            :cursor "pointer"
+            (button :onclick "notify-send Hi!"
+                    "")
+  )
+)

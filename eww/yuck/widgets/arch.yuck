@@ -1,0 +1,4 @@
+(defwidget arch []
+  (eventbox  :class "arch"
+        :cursor "pointer"
+  (button :onclick "dmenu_run" "󰣇")))

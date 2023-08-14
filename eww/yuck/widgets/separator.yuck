@@ -1,0 +1,3 @@
+(defwidget separator []
+  (box  :class "separator"
+    (label :text "󰇙")))
