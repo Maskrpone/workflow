@@ -1,0 +1,50 @@
+(defwidget left []
+  (box  :class "left"
+        :halign "start"
+        :valign "center"
+        :space-evenly false
+        :spacing 15
+  (arch)
+  (separator)
+  (clock))
+)
+
+(defwidget center []
+  (box  :class "center"
+        :halign "center"
+        :valign "center"
+        (workspaces))
+
+)
+
+(defwidget right []
+  (box  :class "right"
+        :halign "end"
+        :valign "center"
+        :spacing 10
+        :space-evenly false
+
+        (slider)
+        (battery)
+        (powermenu_bar))
+)
+
+
+(defwindow mybar
+            :class "mybar"
+            :monitor 0
+            :orientation "h" 
+            :exclusive false
+            :geometry (geometry 
+                        :width "99%"
+                        :x "0px"
+                        :y "5px"
+                        :anchor "top center")
+            :stacking "fg"
+            :windowtype "dock"
+            :wm-ignore false
+  (box  :orientation "h"
+        (left)
+        (center)
+        (right))
+)

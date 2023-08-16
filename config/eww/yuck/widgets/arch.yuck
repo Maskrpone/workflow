@@ -1,0 +1,4 @@
+(defwidget arch []
+  (eventbox  :class "arch"
+        :cursor "pointer"
+  (button :onclick "$HOME/.config/eww/scripts/rofi.sh" "󰣇")))

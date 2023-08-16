@@ -13,29 +13,28 @@ echo "Refreshing mirrors ..."
 
 sudo pacman -Sy --noconfirm
 
+echo "Installing paru ..."
+
+git clone https://aur.archlinux.org/paru
+
+
+
 echo "installing various packages..."
 while read -r p ; do sudo pacman -S --noconfirm $p ; done < <(cat << "EOF"
-		obsidian
-		tmux
-    ripgrep
-		zsh
-    nodejs
-    npm
-    rust
-		neovim
-		btop
-		alacritty
     ttf-meslo-nerd
+    sof-firmware
+    pavucontrol
+    bluez
+    bluez-utils
+    blueberry
+    alacritty
+    neovim
+    firefox
 EOF
 )
 
-git clone https://aur.archlinux.org/yay-git.git && cd ~/.dotfiles/yay-git/ && makepkg -si
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
-
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k;
 
 
-exec ./tmux.sh $path
 
-exec ./nvim.sh $path
+
+
